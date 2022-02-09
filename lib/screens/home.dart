@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:peek_helpers_flutter/modals/provider_info.dart';
 import 'package:peek_helpers_flutter/response/categories_response.dart';
 import 'package:peek_helpers_flutter/response/search_provider_response.dart';
-import 'package:peek_helpers_flutter/screens/testting_purpose.dart';
 import 'package:peek_helpers_flutter/utils/ai_util.dart';
 import 'package:peek_helpers_flutter/utils/constant.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -202,7 +201,6 @@ class _HomeState extends State<Home> {
                 crossAxisCount: 2,
                 children: List.generate(providersList.length, (index) {
                   return InkWell(
-                    onTap: () => _navigateAndDisplaySelection(context),
                     child: _buildListItem(index),
                   );
                 }),
@@ -315,18 +313,5 @@ class _HomeState extends State<Home> {
     setState(() {});
   }
 
-  void _navigateAndDisplaySelection(BuildContext context) async {
-    // Navigator.push returns a Future that completes after calling
-    // Navigator.pop on the Selection Screen.
-    final result = await Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
-    );
 
-    // After the Selection Screen returns a result, hide any previous snackbars
-    // and show the new result.
-    skills = '$result';
-    setState(() {});
-    print("SSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-  }
 }

@@ -18,9 +18,9 @@ class SelectionScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Yep!" as the result.
-                  Navigator.pop(context, 'Yep!');
+                  Navigator.pop(context, 'Driving');
                 },
-                child: const Text('Yep!'),
+                child: const Text('Driving'),
               ),
             ),
             Padding(
@@ -28,9 +28,9 @@ class SelectionScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   // Close the screen and return "Nope." as the result.
-                  Navigator.pop(context, 'Nope.');
+                  Navigator.pop(context, 'Electrician');
                 },
-                child: const Text('Nope.'),
+                child: const Text('Electrician'),
               ),
             )
           ],
